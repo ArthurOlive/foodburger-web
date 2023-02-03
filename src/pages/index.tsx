@@ -45,8 +45,8 @@ export default function Home() {
                   <span className='text-white'>Gerencie seus pedidos de forma simples e facil</span>
                 </div>
                 <form className='flex flex-col gap-3' onSubmit={(e) => {e.preventDefault(); authenticate()}}>
-                  <Input value={username} onChange={(e) => setUsername(e.target.value)} label='Email'/>
-                  <Input value={password} onChange={(e) => setPassword(e.target.value)} label='Senha' type="password"/>
+                  <Input darkMode={true} value={username} onChange={(e) => setUsername(e.target.value)} label='Email'/>
+                  <Input darkMode={true} value={password} onChange={(e) => setPassword(e.target.value)} label='Senha' type="password"/>
                   <Button type='submit'>Entrar</Button>
                 </form>
               </div>

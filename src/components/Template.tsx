@@ -21,8 +21,8 @@ export  const Template = ({children} : Props) => {
                 </div>
                 <div className="flex" style={{height: "calc(100% - 64px)"}}>
                     <SideBar/>
-                    <div className="container p-4"> 
-                        <div>
+                    <div className="container mx-auto p-4"> 
+                        <div className="h-full overflow-auto">
 
                             {/* Content is here */}
                             {children}

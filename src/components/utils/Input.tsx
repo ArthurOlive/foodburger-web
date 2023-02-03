@@ -1,15 +1,19 @@
+import clsx from "clsx"
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
-    label : string
+    label? : string,
+    darkMode? : boolean
 }
-export const Input = ({label, ...rest} : Props) =>  {
+export const Input = ({label, darkMode=false, ...rest} : Props) =>  {
     return (
         <>
-            <label className="text-white">{label}</label>
+            {label && <label className="text-white">{label}</label>}
             <input 
                 type="text" 
-                className="bg-zinc-800 rounded-lg border-zinc-900 p-3 
-                text-white outline-none"
+                className={clsx("rounded-lg p-3 outline-none shadow", {
+                    "bg-zinc-800 border-zinc-900 text-white" : darkMode,
+                    "bg-slate-50 border-bg-slate-200" : !darkMode 
+                })}
                 {...rest}
             />
         </>
