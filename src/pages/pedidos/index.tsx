@@ -1,4 +1,5 @@
 import { SideBar } from "@/components/SideBar";
+import { Template } from "@/components/Template";
 import { Button } from "@/components/utils/Button";
 import { SessionContext, SessionContextProps } from "@/hooks/sessionContext";
 import Router from "next/router";
@@ -14,21 +15,10 @@ export default function Home () {
     }
 
     return (
-        <div className="h-screen w-scren flex flex-col">
-            <div className="w-full h-16 bg-black">
-
-            </div>
-            <div className="flex" style={{height: "calc(100% - 64px)"}}>
-                <SideBar/>
-                <div className="container p-4"> 
-                    <div>
-
-                        {/* Content is here */}
+        <Template>
                         
-                        <Button onClick={singout}>Deslogar</Button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <Button onClick={singout}>Deslogar</Button>
+            
+        </Template>
     )
 }

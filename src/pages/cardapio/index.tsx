@@ -1,7 +1,9 @@
+import { Template } from "@/components/Template"
+
 export const Cardapio = () => {
     return (
-        <div>
-            
-        </div>
+        <Template>
+            Cardapio
+        </Template>
     )
 }

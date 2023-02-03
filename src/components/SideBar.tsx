@@ -4,7 +4,7 @@ import { SideBarItem } from './SideBarItem'
 
 export const SideBar = () => {
     return (
-        <div className="flex flex-col justify-between bg-zinc-900 w-16 h-full gap-1 p-1" >
+        <div className="flex flex-col justify-between bg-zinc-800 w-16 h-full gap-1 p-1" >
             <section className='flex flex-col gap-1'>
                 <SideBarItem text={"Pedidos"}  icon={<MdOutlineStickyNote2/>}/>
                 <SideBarItem text={"Cardapio"} icon={<MdOutlineMenuBook/>}/>

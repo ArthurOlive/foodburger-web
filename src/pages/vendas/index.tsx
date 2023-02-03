@@ -1,7 +1,9 @@
+import { Template } from "@/components/Template"
+
 export const Vendas = () => { 
     return (
-        <div>
+        <Template>
             Vendas
-        </div>
+        </Template>
     )
 }

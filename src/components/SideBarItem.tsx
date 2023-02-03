@@ -9,10 +9,9 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export const SideBarItem = ({icon, text, ...rest} : Props) => {
     return (
         <button 
-            className="text-white flex flex-col items-center 
-            justify-center p-2 bg-gray-900 rounded
-            cursor-pointer
-            hover:bg-black
+            className="text-zinc-50 flex flex-col items-center 
+            justify-center p-2 bg-zinc-800 rounded cursor-pointer
+            hover:bg-zinc-900
             " 
             
             {...rest}>
