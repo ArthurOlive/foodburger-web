@@ -6,8 +6,11 @@ import { Button } from '@/components/Button'
 import Image from 'next/image'
 import { Header } from '@/components/Header'
 import Api from '@/libs/api'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Router from 'next/router'
+import { SessionContext, SessionContextProps } from '@/hooks/sessionContext'
+import { singin } from '@/libs/requests/sessionRequests'
+import Response from '@/libs/types/response'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,20 +18,12 @@ export default function Home() {
 
   const [username, setUsername] = useState<string>("")
   const [password, setPassword] = useState<string>("")
+  const { setToken } = useContext<SessionContextProps>(SessionContext)
 
   const authenticate = async () => {
-    const response = await Api.post("/authenticate", 
-      {
-        "username" : username,
-        "password" : password
-      }
-    )
-
-    console.log(response)
-
-    localStorage.setItem("token" , response.data["Content"])
+    const response : Response<string> = await singin(username, password);
       
-    Router.push("/home")
+    setToken(response.content)
   }
 
   return (
