@@ -1,11 +1,31 @@
+import { SessionContext, SessionContextProps } from "@/hooks/sessionContext"
+import { getStore } from "@/libs/requests/storeRequest"
+import { Store } from "@/libs/types/store"
 import Head from "next/head"
-import { ReactNode } from "react"
+import Router from "next/router"
+import { ReactNode, useContext, useEffect, useState } from "react"
 import { SideBar } from "./SideBar"
 
 interface Props {
     children : ReactNode | ReactNode[] | undefined
 }
 export  const Template = ({children} : Props) => {
+
+    const { token, setToken } = useContext<SessionContextProps>(SessionContext)
+    const [store, setStore] = useState<Store>();
+
+    const fetchStore = async () => {
+        const data = await getStore(token as string)
+
+
+        //if (data.content) setStore(data.content)
+        //else Router.push("/completeStoreRegister")
+    }
+
+    useEffect(() => {
+        fetchStore()
+    }, [])
+
     return (
         <>
             <Head>
