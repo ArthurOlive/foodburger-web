@@ -1,4 +1,4 @@
-import { Button } from "./Button"
+import { Button } from "./utils/Button"
 
 export const Header = () => {
     return (

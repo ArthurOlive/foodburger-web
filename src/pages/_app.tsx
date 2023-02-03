@@ -11,10 +11,10 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (token != null && token != undefined) {
       localStorage.setItem("token" , token)
-      Router.push("/home")
+      Router.push("/pedidos")
     } else if (localStorage.getItem("token") != null && localStorage.getItem("token") != "") {
       setToken(localStorage.getItem("token") as string)
-      Router.push("/home")
+      Router.push("/pedidos")
     } else {
       localStorage.setItem("token" , "")
       Router.push("/")
