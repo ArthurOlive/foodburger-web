@@ -1,6 +1,6 @@
 import { Template } from "@/components/Template"
 
-export const Cardapio = () => {
+export default function Cardapio() {
     return (
         <Template>
             Cardapio

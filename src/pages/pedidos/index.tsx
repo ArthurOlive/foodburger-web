@@ -7,17 +7,10 @@ import { useContext } from "react";
 
 export default function Home () {
 
-    const { token, setToken } = useContext<SessionContextProps>(SessionContext)
-
-    const singout = () => {
-        localStorage.setItem("token", "")
-        setToken(null)
-    }
-
     return (
         <Template>
                         
-            <Button onClick={singout}>Deslogar</Button>
+            <Button>Deslogar</Button>
             
         </Template>
     )

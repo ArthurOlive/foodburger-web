@@ -1,6 +1,6 @@
 import { Template } from "@/components/Template"
 
-export const Vendas = () => { 
+export default function vendas() { 
     return (
         <Template>
             Vendas
