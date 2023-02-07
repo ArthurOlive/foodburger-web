@@ -18,8 +18,8 @@ export  const Template = ({children} : Props) => {
         const data = await getStore(token as string)
 
 
-        //if (data.content) setStore(data.content)
-        //else Router.push("/completeStoreRegister")
+        if (data.content) setStore(data.content)
+        else Router.push("/completeStoreRegister")
     }
 
     useEffect(() => {

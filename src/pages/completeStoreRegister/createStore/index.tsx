@@ -14,7 +14,7 @@ export default function CreateStore() {
     const createStore = async (event : FormEvent) => {
         event.preventDefault()
 
-        //await saveStore(name, describe, token as string)
+        await saveStore(name, describe, token as string)
 
         Router.push("/pedidos")
     }
