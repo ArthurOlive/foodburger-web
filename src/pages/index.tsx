@@ -21,9 +21,9 @@ export default function Home() {
   const { setToken } = useContext<SessionContextProps>(SessionContext)
 
   const authenticate = async () => {
-    const response : Response<string> = await singin(username, password);
+    const response : Response<string> | undefined = await singin(username, password);
       
-    setToken(response.content)
+    if (response != undefined) setToken(response.content)
   }
 
   return (
@@ -34,7 +34,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className='w-screen h-screen flex-col'>
-        <Header/>
+        <Header btnLogin={true}/>
         <div className='bg-black/25 h-full' style={{height:"calc(100% - 80px)"}}>
           <div className='flex flex-row items-center justify-center h-full z-50'>
             <div className='w-4/6 h-full'></div>
